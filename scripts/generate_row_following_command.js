@@ -1,4 +1,4 @@
-async function generateRowFollosingRosMessage(pilotId, fieldNumber, lineNumbers) {
+async function generateRowFollowingRosMessage(pilotId, fieldNumber, lineNumbers) {
     let jsonUrl;
 
     // Determine the correct JSON URL based on the pilotId
