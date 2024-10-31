@@ -1,8 +1,8 @@
 async function generateRosMessage(pilotId, fieldId, areaId) {
     let jsonUrl;
-    if (pilotId === 'lspsim') {
+    if (pilotId === "lspsim") {
         jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspsim.json';
-    } else if (pilotId === 'lsps') {
+    } else if (pilotId === "lsps") {
         jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lsps.json';
     } else {
         throw new Error(`Unknown pilotId "${pilotId}"`);
