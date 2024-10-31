@@ -63,3 +63,20 @@ async function generateRowFollowingRosMessage(pilotId, fieldNumber, lineNumbers)
 
     return(JSON.stringify(messageContent, null, 2));
 }
+
+function createWaypoint(lat, lon) {
+    return {
+        map_id: "map",
+        geographic_point: {
+            latitude: lat,
+            longitude: lon,
+            altitude: 0.0
+        },
+        orientation_3d: {
+            x: 0.0,
+            y: 0.0,
+            z: 0.0,
+            w: 1.0
+        }
+    };
+}
