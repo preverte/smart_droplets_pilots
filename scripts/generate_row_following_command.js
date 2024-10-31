@@ -11,8 +11,11 @@ async function generateRowFollowingRosMessage(pilotId, fieldNumber, lineNumbers)
     }
 
     // Fetch the JSON data from the GitHub URL
-    const response = await axios.get(jsonUrl);
-    const data = response.data;
+    const response = await fetch(jsonUrl);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch JSON: ${response.statusText}`);
+    }
+    const data = await response.json();
 
     // Check if the field exists in the JSON
     const field = data.farm.fields.find(f => f.name === fieldNumber);
