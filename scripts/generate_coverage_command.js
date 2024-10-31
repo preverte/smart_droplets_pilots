@@ -1,4 +1,4 @@
-async function generateRosMessage(pilotId, fieldId, areaId) {
+async function generateCoverageRosMessage(pilotId, fieldId, areaId) {
     let jsonUrl;
     console.log(`Received pilotId: "${pilotId}"`);
 
