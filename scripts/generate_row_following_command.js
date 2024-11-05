@@ -6,6 +6,8 @@ async function generateRowFollowingRosMessage(pilotId, fieldNumber, lineNumbers)
         jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspsim.json';
     } else if (pilotId.trim() === 'lsps') {
         jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lsps.json';
+    } else if (pilotId.trim() === 'lspl') {
+        jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspl.json';
     } else {
         throw new Error(`Unknown pilotId "${pilotId}". Please enter either "lspsim" or "lsps".`);
     }
