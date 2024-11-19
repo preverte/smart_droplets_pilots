@@ -48,7 +48,7 @@ async function generatePathReplayRosMessage(pilotId, fieldId, pathName) {
     // Return the ROS message as a JSON string
     return JSON.stringify({
         header: { stamp: { sec: 0, nanosec: 0 }, frame_id: 'map' },
-        command: 'path_following',
+        command: 'path_replay',
         command_time: '0.0',
         type: 'path',
         waypoints: waypoints
