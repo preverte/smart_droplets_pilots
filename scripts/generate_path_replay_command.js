@@ -14,6 +14,8 @@ async function generatePathReplayRosMessage(pilotId, fieldId, pathName) {
         throw new Error(`Unknown pilotId "${pilotId}"`);
     }
 
+    jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/${pilotId}.json?v=${new Date().getTime()}`;
+
     // Fetch the JSON data
     const response = await fetch(jsonUrl);
     if (!response.ok) {
