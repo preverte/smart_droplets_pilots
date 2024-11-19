@@ -4,17 +4,15 @@ async function generatePathReplayRosMessage(pilotId, fieldId, pathName) {
 
     // Determine the correct JSON URL based on the pilotId
     if (pilotId.trim() === 'lspsim') {
-        jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspsim.json';
+        jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspsim.json?v=${new Date().getTime()}`;
     } else if (pilotId.trim() === 'lsps') {
-        jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lsps.json';
+        jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lsps.json?v=${new Date().getTime()}`;
     } else if (pilotId.trim() === 'lspl') {
-        jsonUrl = 'https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspl.json';
+        jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspl.json?v=${new Date().getTime()}`;
     } else {
         alert(`Unknown pilotId "${pilotId}". Please enter either "lspsim", "lsps", or "lspl".`);
         throw new Error(`Unknown pilotId "${pilotId}"`);
     }
-
-    jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/${pilotId}.json?v=${new Date().getTime()}`;
 
     // Fetch the JSON data
     const response = await fetch(jsonUrl);
@@ -50,9 +48,9 @@ async function generatePathReplayRosMessage(pilotId, fieldId, pathName) {
     // Return the ROS message as a JSON string
     return JSON.stringify({
         header: { stamp: { sec: 0, nanosec: 0 }, frame_id: 'map' },
-        command: 'path_replay',
+        command: '',
         command_time: '0.0',
-        type: 'path',
+        type: 'path_replay',
         waypoints: waypoints
     }, null, 2);
 }
