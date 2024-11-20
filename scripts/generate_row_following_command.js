@@ -3,11 +3,11 @@ async function generateRowFollowingRosMessage(pilotId, fieldNumber, lineNumbers)
 
     // Determine the correct JSON URL based on the pilotId
     if (pilotId.trim() === 'lspsim') {
-        jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspsim.json?v=${new Date().getTime()}`;
+        jsonUrl = `pilots/farms/lspsim.json?v=${new Date().getTime()}`;
     } else if (pilotId.trim() === 'lsps') {
-        jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lsps.json?v=${new Date().getTime()}`;
+        jsonUrl = `pilots/farms/lsps.json?v=${new Date().getTime()}`;
     } else if (pilotId.trim() === 'lspl') {
-        jsonUrl = `https://raw.githubusercontent.com/preverte/smart_droplets_pilots/main/farms/lspl.json?v=${new Date().getTime()}`;
+        jsonUrl = `pilots/farms/lspl.json?v=${new Date().getTime()}`;
     } else {
         alert(`Unknown pilotId "${pilotId}". Please enter either "lspsim", "lsps", or "lspl".`);
         throw new Error(`Unknown pilotId "${pilotId}"`);
