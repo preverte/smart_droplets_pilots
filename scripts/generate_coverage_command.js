@@ -49,9 +49,9 @@ async function generateCoverageRosMessage(pilotId, fieldId, areaId) {
     // Return the ROS message as a JSON string
     return JSON.stringify({
         header: { stamp: { sec: 0, nanosec: 0 }, frame_id: 'map' },
-        command: '',
+        command: 'coverage',
         command_time: '0.0',
-        type: 'coverage',
+        type: 'CommandMessage',
         waypoints: waypoints
     }, null, 2); 
 }

@@ -58,9 +58,9 @@ async function generateRowFollowingRosMessage(pilotId, fieldNumber, lineNumbers)
     // Create the final message content
     const messageContent = {
         header: { stamp: { sec: 0, nanosec: 0 }, frame_id: 'map' },
-        command: '',
+        command: 'row_following',
         command_time: '0.0',
-        type: 'row_following',
+        type: 'CommandMessage',
         waypoints: waypointsArray
     };
 
